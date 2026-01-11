@@ -1,0 +1,63 @@
+{% extends 'users/userbase.html' %}
+
+{% block content %}
+<section id="predict-hair-loss" class="d-flex justify-content-center align-items-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="text-center">Predict Disease</h1>
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="Symptom_1" class="form-label">Symptom_1:</label>
+                                <input type="text" id="Symptom_1" name="Symptom_1" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="Symptom_2" class="form-label">Symptom_2:</label>
+                                <input type="text" id="Symptom_2" name="Symptom_2" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="Symptom_3" class="form-label">Symptom_3</label>
+                                <input type="text" id="Symptom_3" name="Symptom_3" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="Symptom_4" class="form-label">Symptom_4</label>
+                                <input type="text" id="Symptom_4" name="Symptom_4" class="form-control" required >
+                            </div>
+                            <div class="mb-3">
+                                <label for="Symptom_5" class="form-label">Symptom_5</label>
+                                <input type="text" id="Symptom_5" name="Symptom_5" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="Symptom_6" class="form-label">Symptom_6</label>
+                                <input type="text" id="Symptom_6" name="Symptom_6" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="Symptom_7" class="form-label">Symptom_7</label>
+                                <input type="text" id="Symptom_7" name="Symptom_7" class="form-control" >
+                            </div>
+                            <div class="mb-3">
+                                <label for="Symptom_8" class="form-label">Symptom_8</label>
+                                <input type="text" id="Symptom_8" name="Symptom_8" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="Symptom_9" class="form-label">Symptom_9</label>
+                                <input type="text" id="Symptom_9" name="Symptom_9" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="Symptom_10" class="form-label">Symptom_10</label>
+                                <input type="text" id="Symptom_10" name="Symptom_10" class="form-control">
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Predict Disease</button>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

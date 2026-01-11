@@ -1,0 +1,79 @@
+{% extends 'users/userbase.html' %}
+{% block content %}
+
+<head>
+    <style>
+        body {
+            background-color: rgb(103, 244, 244); /* Set your desired background color */
+            margin: 0;
+            padding: 0;
+        }
+
+        .table-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto; /* Center the container horizontally */
+            max-width: 80%; /* Define the maximum width (adjust as needed) */
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 25%;
+            margin: 10px;
+        }
+
+        th, td {
+            border: 2px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            text-align: center; /* Center the text in table headers */
+        }
+
+        .table-name {
+            text-align: center; /* Center the text in table names */
+            font-weight: bold; /* Optional: Make the name bold */
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h1>Model Results</h1>
+    <div class="table-container">
+    {% for result in results_list %}
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2" class="table-name">{{ result.model_name }}</th>
+            </tr>
+        </thead>
+        <tr>
+            <th style="color: brown">Metric</th>
+            <th style="color: brown">Value</th>
+        </tr>
+        <tr>
+            <td>Accuracy</td>
+            <td style="color: red">{{ result.model_acc|floatformat:3 }}</td>
+        </tr>
+        <tr>
+            <td>Precision</td>
+            <td style="color: red">{{ result.model_precision|floatformat:3 }}</td>
+        </tr>
+        <tr>
+            <td>Recall</td>
+            <td style="color: red">{{ result.model_recall|floatformat:3 }}</td>
+        </tr>
+        <tr>
+            <td>F1 Score</td>
+            <td style="color: red">{{ result.model_f1|floatformat:3 }}</td>
+        </tr>
+    </table>
+    {% endfor %}
+    </div>
+    </center>
+</body>
+
+{% endblock %}
